@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мое Портфолио</title>
+    <style>
+        /* 1. ПЛАВАЮЩЕЕ МЕНЮ (ШАПКА) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;         /* Кратно 8 (6 * 8) */
+            background-color: #72ADFF;
+            border-bottom: 2px solid black;
+            display: flex;
+            align-items: center;
+            z-index: 10000;
+            box-sizing: border-box;
+            font-family: "Tahoma", sans-serif;
+            padding-right: 16px;  /* Отступ справа */
+        }
+
+        /* Зеленая кнопка Veronika */
+        .start-btn {
+            background-color: #B8F65A;
+            height: 100%;
+            padding: 0 32px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 0 24px 24px 0;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            border: none; /* Без черной обводки по просьбе */
+        }
+
+        /* Настройка твоей новой SVG иконки */
+        .win-icon {
+            width: 24px;   /* Размер подбираем под высоту меню */
+            height: auto;
+            fill: black;   /* Делаем иконку плоской черной */
+        }
+
+        /* Контейнер кнопок справа */
+        .nav-links {
+            display: flex;
+            gap: 4px;             /* Расстояние между кнопками 4px */
+            margin-left: auto;    /* Прижимаем к правому краю */
+        }
+
+        /* Стиль кнопок меню */
+        .nav-item {
+            text-decoration: none;
+            color: black;
+            border: 2px solid black; /* Толщина рамки 2px */
+            border-radius: 12px;
+            
+            width: 176px;          /* Длина кратна 8 (176 / 8 = 22) */
+            height: 32px;          /* Высота кратна 8 (32 / 8 = 4) */
+            
+            display: flex;
+            align-items: center;
+            padding-left: 8px;     /* Текст прижат влево с отступом 8px */
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: transparent;
+            transition: background 0.2s;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 2. КОНТЕНТ (ОКНА) */
+        body {
+            margin: 0;
+            padding: 100px 0 50px 0;
+            font-family: "Tahoma", sans-serif;
+            background: linear-gradient(135deg, #89afd5 0%, #a1b6d5 25%, #e5b0c5 60%, #f9d98a 100%);
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center; 
+        }
+
+        section.desktop {
+            width: 100%;
+            max-width: 1440px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        section.window {
+            width: 45%; 
+            background-color: #054FCE;
+            border: 3px solid #054FCE;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 40px; 
+            scroll-margin-top: 80px;
+        }
+
+        .left-side { margin-left: 11.1%; align-self: flex-start; }
+        .right-side { margin-right: 11.1%; align-self: flex-end; }
+
+        header {
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav b {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid white;
+            background: #054FCE;
+            text-align: center;
+            line-height: 16px;
+            font-size: 12px;
+            margin-left: 2px;
+        }
+        .red-btn { background-color: #e81123; }
+
+        main { background-color: #f0eee4; padding: 10px; }
+        article { background-color: white; border: 2px solid #d4d0c8; padding: 20px; line-height: 1.3; }
+        p { margin: 0 0 2px 0; }
+        .description { margin-top: 15px; display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- ВЕРХНЕЕ МЕНЮ -->
+    <nav class="navbar">
+        <div class="start-btn">
+            <!-- ТВОЯ НОВАЯ ИКОНКА -->
+            <svg class="win-icon" viewBox="0 0 164.11 144.637">
+                <path d="M34.089 6.949s32.8-17.843 60.859 3.654L79.246 64.561s-17.574-12.104-30.623-10.8c-13.049 1.304-30.234 7.554-30.234 7.554l15.7-54.366zM15.621 70.823s17.604-8.188 32.221-7.146c14.615 1.043 26.285 8.91 28.802 10.717l-15.865 54.521s-17.635-11.476-30.162-10.432C18.089 119.53 7.229 121.438 0 125.181l15.621-54.358zM84.859 79.672s16.744 10.888 27.705 10.627c10.799-.258 18.27-1.109 32.921-6.852.114-.045.412-.258.313-.195-.313.195-15.699 54.031-15.699 54.031s-17.273 8.082-32.935 7.301c-15.658-.783-25.062-9.738-27.929-10.873l15.624-54.039z"/>
+                <path d="M103.251 16.295L87.51 69.942s12.788 12.527 30.797 11.482c18.008-1.043 27.795-6.719 30.176-7.52l15.627-54.12s-20.748 8.66-34.32 7.094c-13.571-1.564-22.024-7.335-26.539-10.583z"/>
+            </svg>
+            Veronika
+        </div>
+
+        <div class="nav-links">
+            <a href="#about" class="nav-item">Обо мне</a>
+            <a href="#edu" class="nav-item">Образование</a>
+            <a href="#courses" class="nav-item">Курсы и тренинги</a>
+            <a href="#arts" class="nav-item">Художество</a>
+        </div>
+    </nav>
+
+    <section class="desktop">
+
+    
+    <section class="window left-side" id="about">
+        <header>Обо мне <nav><b>_</b><b>▢</b><b class="red-btn">X</b></nav></header>
+        <main>
+            <article>
+                <p>Образование: Высшее</p>
+                <p>Дата рождения: 06.05.2004 г.</p>
+                <p>Пол: Женский</p>
+                <p>Семейное положение: Не замужем</p>
+                <p>Город: Санкт-Петербург</p>
+                <p class="description">Мне 21 год, я родилась 6 мая 2004 года. Сейчас проживаю в Санкт-Петербурге. Почти всю жизнь провела в Украине, закончила там лицей. Теперь учусь в России.</p>
+            </article>
+        </main>
+    </section>
+
+    
+    <section class="window right-side" id="edu">
+        <header>Образование <nav><b>_</b><b>▢</b><b class="red-btn">X</b></nav></header>
+        <main>
+            <article>
+                <p>Я студентка Университета ИТМО, учусь на факультете программной инженерии и компьютерной техники по специальности «Веб-дизайнер» на очной форме обучения. Планирую окончить вуз в 2027 году. До поступления в ИТМО успела попробовать себя в двух других университетах: прошла первый курс в ДонТУ (Донецкая Народная Республика), а затем в ДГТУ (Ростов-на-Дону), что дало мне разный академический опыт и понимание того, какое направление действительно мое.</p>
+                
+            </article>
+        </main>
+    </section>
+
+    <section class="window left-side" id="courses">
+        <header>Курсы и тренинги <nav><b>_</b><b>▢</b><b class="red-btn">X</b></nav></header>
+        <main>
+            <article>
+                <p>Курс: Дизайн в фигме</p>
+                <p>Школа: Yudaev school</p>
+                <p>Окончание: 2024 год</p>
+                <p>Срок: 6 месяцев</p>
+                <p class="description">Для углубления профессиональных навыков в 2024 году я прошла шестимесячное обучение на курсе «Дизайн в Figma» в школе Yudaev school, где освоила современные инструменты веб-дизайна и работы с интерфейсами.</p>
+            </article>
+        </main>
+    </section>
+
+    
+    <section class="window right-side" id="arts">
+        <header>Художественные качества <nav><b>_</b><b>▢</b><b class="red-btn">X</b></nav></header>
+        <main>
+            <article>
+                <p>Параллельно с основным образованием я всегда развивала творческую составляющую. Четыре года в художественной школе заложили фундамент академического рисунка и живописи, а занятия в арт-студии «Клюква» помогли отточить мастерство и найти свой стиль.
+</p>
+                    <p>Уже более 3 лет я профессионально создаю арты на заказ: это полноценный путь от первых набросков и поиска вдохновения до финальной цифровой иллюстрации. За это время я научилась не только хорошо рисовать, но и выстраивать диалог с заказчиками — слышать их пожелания, предлагать свои идеи и доводить проекты до результата, которым обе стороны остаются довольны. Этот опыт научил меня ответственности, умению работать с правками и видеть проект целиком, а не просто как картинку.</p>
+                </article>
+            </main>
+        </section>
+
+    </section>
+
+</body>
+</html>
